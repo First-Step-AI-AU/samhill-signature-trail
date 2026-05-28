@@ -342,6 +342,112 @@
             transform: translateX(0);
         }
 
+        /* ===== FEATURED PROJECT ===== */
+        .featured-project { padding: 6rem 3rem 4rem; }
+        .featured-project-inner { max-width: 1280px; margin: 0 auto; }
+        .featured-project-meta { margin-bottom: 2.5rem; }
+        .featured-project-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 0.95;
+            margin: 0.75rem 0 1rem;
+        }
+        .featured-project-subtitle {
+            font-size: 1.1rem;
+            color: #999;
+            max-width: 720px;
+            line-height: 1.6;
+        }
+        .featured-project-hero {
+            width: 100%;
+            overflow: hidden;
+            margin: 2.5rem 0 3rem;
+            clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px));
+        }
+        .featured-project-hero img {
+            width: 100%;
+            height: 60vh;
+            min-height: 420px;
+            max-height: 720px;
+            object-fit: cover;
+            display: block;
+            transition: transform 1.2s ease;
+        }
+        .featured-project-hero:hover img { transform: scale(1.03); }
+        .featured-project-body {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        .project-meta-grid { display: flex; flex-direction: column; gap: 0.25rem; }
+        .project-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #1f1f1f;
+        }
+        .project-meta-item:last-child { border-bottom: none; }
+        .project-meta-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #c8ff00;
+        }
+        .project-meta-value {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.35rem;
+            letter-spacing: 0.05em;
+            color: #f5f5f0;
+        }
+        .featured-project-copy p {
+            font-size: 1rem;
+            color: #999;
+            line-height: 1.8;
+            margin-bottom: 1.25rem;
+        }
+        .featured-project-copy p:last-child { margin-bottom: 0; }
+        .featured-project-copy p strong { color: #f5f5f0; font-weight: 600; }
+        .featured-project-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        .featured-gallery-item { display: flex; flex-direction: column; gap: 0.6rem; }
+        .featured-gallery-image {
+            overflow: hidden;
+            clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+        }
+        .featured-gallery-image img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+        .featured-gallery-item:hover .featured-gallery-image img { transform: scale(1.06); }
+        .featured-gallery-caption {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.05em;
+            color: #6b6b6b;
+            line-height: 1.5;
+        }
+        .featured-project-divider {
+            height: 1px;
+            max-width: 1280px;
+            margin: 0 auto;
+            background: linear-gradient(to right, transparent, #1f1f1f 20%, #1f1f1f 80%, transparent);
+        }
+        @media (max-width: 900px) {
+            .featured-project-body { grid-template-columns: 1fr; gap: 1.5rem; }
+            .featured-project-gallery { grid-template-columns: 1fr; }
+            .featured-project-hero img { height: 50vh; min-height: 320px; }
+            .featured-gallery-image img { height: 240px; }
+        }
+
         /* ===== WORK GALLERY ===== */
         .work-gallery {
             max-width: 1200px;
@@ -643,11 +749,76 @@
         </div>
     </section>
 
+    <!-- Featured Project: Queenstown -->
+    <section class="featured-project">
+        <div class="featured-project-inner">
+            <div class="featured-project-meta">
+                <span class="section-label reveal">Featured Project</span>
+                <h2 class="featured-project-title reveal">Coronet,<br>Queenstown.</h2>
+                <p class="featured-project-subtitle reveal">A signature alpine trail network, designed and built end-to-end across one of the most demanding landscapes in the southern hemisphere.</p>
+            </div>
+
+            <div class="featured-project-hero reveal">
+                <img src="assets/projects/queenstown/hero.jpg" alt="Riders at golden hour on a new alpine trail above Queenstown's lake and mountain range">
+            </div>
+
+            <div class="featured-project-body">
+                <div class="featured-project-info reveal-left">
+                    <div class="project-meta-grid">
+                        <div class="project-meta-item">
+                            <span class="project-meta-label">Location</span>
+                            <span class="project-meta-value">Queenstown, NZ</span>
+                        </div>
+                        <div class="project-meta-item">
+                            <span class="project-meta-label">Scope</span>
+                            <span class="project-meta-value">Design + Build</span>
+                        </div>
+                        <div class="project-meta-item">
+                            <span class="project-meta-label">Terrain</span>
+                            <span class="project-meta-value">Alpine, exposed schist</span>
+                        </div>
+                        <div class="project-meta-item">
+                            <span class="project-meta-label">Delivery</span>
+                            <span class="project-meta-value">In-house crew</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="featured-project-copy reveal-right">
+                    <p>Built across the steep, exposed terrain above Lake Wakatipu, this project demanded a build that could honour the alpine landscape and still deliver the flow Sam puts his name to. The result is a network of <strong>hand-shaped berms, progressive jumps, and natural-feature lines</strong> cut directly into the contours of the mountainside.</p>
+                    <p>Our in-house construction crew managed the full build on site, from first earthworks through to final ride-off. No subcontracted handoffs, no compromises in translation. Every line was shaped by the team that designed it, and every feature was tested by the people who built it.</p>
+                </div>
+            </div>
+
+            <div class="featured-project-gallery">
+                <div class="featured-gallery-item reveal">
+                    <div class="featured-gallery-image">
+                        <img src="assets/projects/queenstown/berm-aerial.jpg" alt="Aerial view of a large carved berm cut into the mountainside with Lake Wakatipu in the distance">
+                    </div>
+                    <span class="featured-gallery-caption">A signature berm carved into the mountainside, with the township and lake below.</span>
+                </div>
+                <div class="featured-gallery-item reveal">
+                    <div class="featured-gallery-image">
+                        <img src="assets/projects/queenstown/construction.jpg" alt="Excavator working on trail construction with mountains in the background">
+                    </div>
+                    <span class="featured-gallery-caption">Our in-house build crew on site, shaping lines from the saddle of the ridge.</span>
+                </div>
+                <div class="featured-gallery-item reveal">
+                    <div class="featured-gallery-image">
+                        <img src="assets/projects/queenstown/jumpline.jpg" alt="Detail of a progressive jump line built into the hillside at golden hour">
+                    </div>
+                    <span class="featured-gallery-caption">Progressive jump line, built to championship spec and tuned for flow at race pace.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="featured-project-divider"></div>
+
     <!-- Work Gallery Section -->
     <section>
         <div class="work-gallery">
-            <span class="section-label reveal">Our Work</span>
-            <h2 class="section-title reveal">Projects & Collaborations</h2>
+            <span class="section-label reveal">More Work</span>
+            <h2 class="section-title reveal">Selected Projects &amp; Collaborations</h2>
 
             <div class="work-grid">
                 <!-- Project 1 -->
