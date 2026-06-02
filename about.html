@@ -436,13 +436,30 @@
         }
         .philosophy-card {
             background: #0a0a0a;
-            padding: 2.5rem;
             border: 1px solid #1a1a1a;
             clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
             transition: border-color 0.4s ease;
+            overflow: hidden;
         }
         .philosophy-card:hover {
             border-color: #c8ff00;
+        }
+        .philosophy-card-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background: #1a1a1a;
+        }
+        .philosophy-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            display: block;
+        }
+        .philosophy-card:hover .philosophy-card-image img { transform: scale(1.05); }
+        .philosophy-card-body {
+            padding: 2rem 2.5rem 2.5rem;
         }
         .philosophy-number {
             font-family: 'Bebas Neue', sans-serif;
@@ -777,20 +794,34 @@
         </div>
     </section>
 
-    <!-- Stats Row -->
-    <section class="stats-section">
-        <div class="stats-row">
-            <div class="stat-item reveal">
-                <div class="stat-number"><span class="stat-counter" data-target="20">0</span><span class="stat-suffix">+</span></div>
-                <div class="stat-label">Years Experience</div>
+    <!-- About Dave Section -->
+    <section>
+        <div class="about-grid">
+            <div class="about-text reveal-left">
+                <span class="section-label">The Construction Expertise</span>
+                <h2 class="section-title">Dave du Plessis</h2>
+                <p>Dave leads operations and site supervision for Sam Hill Signature Trail. With <strong>18+ years of hands-on trail delivery</strong> across Australia and New Zealand, he is one of the most experienced trail builders and machine operators in the field.</p>
+                <p>Dave has played a central role in multiple environmentally and culturally sensitive trail projects, working with strict dieback hygiene compliance, buffer zone management around rare flora, and precision excavation in corridors as narrow as 900mm. When the work is on the ground, Dave is on the ground.</p>
             </div>
-            <div class="stat-item reveal">
-                <div class="stat-number"><span class="stat-counter" data-target="8">0</span><span class="stat-suffix">+</span></div>
-                <div class="stat-label">World Titles</div>
+            <div class="about-image reveal-right">
+                <img src="assets/team/dave.jpg" alt="Dave du Plessis on site at a trail build">
+                <div class="about-image-border"></div>
             </div>
-            <div class="stat-item reveal">
-                <div class="stat-number"><span class="stat-counter" data-target="30">0</span><span class="stat-suffix">+</span></div>
-                <div class="stat-label">Countries Raced</div>
+        </div>
+    </section>
+
+    <!-- About Lukas Section -->
+    <section>
+        <div class="about-grid">
+            <div class="about-image reveal-left">
+                <img src="assets/projects/linga-longa/hero.jpg" alt="Misty pine plantation landscape representing environmental and land management work">
+                <div class="about-image-border"></div>
+            </div>
+            <div class="about-text reveal-right">
+                <span class="section-label">The Environmental Expert</span>
+                <h2 class="section-title">Lukas Baker</h2>
+                <p>Lukas brings <strong>16+ years of experience</strong> in environmental and operational management, with a specialised focus on forestry, cultural and ecological compliance, and GIS mapping. He holds a Diploma in Forest and Forest Products and has led diverse projects across Western Australia.</p>
+                <p>His strengths lie in bridging field operations with regulatory and ecological standards, particularly integrating cultural heritage considerations and dieback hygiene requirements into active construction programs. Every site is left better than it was found.</p>
             </div>
         </div>
     </section>
@@ -803,47 +834,38 @@
         </div>
         <div class="philosophy-grid">
             <div class="philosophy-card reveal">
-                <div class="philosophy-number">01</div>
-                <h3 class="philosophy-card-title">Race-Proven Instinct</h3>
-                <p class="philosophy-card-desc">Every trail we design is informed by thousands of competitive runs on the world's most demanding courses. We don't just draw lines on a map. We feel them.</p>
+                <div class="philosophy-card-image">
+                    <img src="assets/projects/queenstown/hero.jpg" alt="Riders at golden hour, race-proven instinct">
+                </div>
+                <div class="philosophy-card-body">
+                    <div class="philosophy-number">01</div>
+                    <h3 class="philosophy-card-title">Race-Proven Instinct</h3>
+                    <p class="philosophy-card-desc">Every trail we design is informed by thousands of competitive runs on the world's most demanding courses. We don't just draw lines on a map. We feel them.</p>
+                </div>
             </div>
             <div class="philosophy-card reveal">
-                <div class="philosophy-number">02</div>
-                <h3 class="philosophy-card-title">Flow & Sustainability</h3>
-                <p class="philosophy-card-desc">The best trails don't fight the terrain. They dance with it. Our designs honour natural contours while creating experiences that keep riders coming back.</p>
+                <div class="philosophy-card-image">
+                    <img src="assets/projects/pemberton/hero.jpg" alt="Berm carved into karri forest, working with the terrain">
+                </div>
+                <div class="philosophy-card-body">
+                    <div class="philosophy-number">02</div>
+                    <h3 class="philosophy-card-title">Flow & Sustainability</h3>
+                    <p class="philosophy-card-desc">The best trails don't fight the terrain. They dance with it. Our designs honour natural contours while creating experiences that keep riders coming back.</p>
+                </div>
             </div>
             <div class="philosophy-card reveal">
-                <div class="philosophy-number">03</div>
-                <h3 class="philosophy-card-title">Built to Last</h3>
-                <p class="philosophy-card-desc">Every build uses sustainable construction methods that protect the environment and ensure trails stand the test of time. We don't cut corners on the ground, because our reputation rides on every trail we sign off.</p>
+                <div class="philosophy-card-image">
+                    <img src="assets/projects/queenstown/construction.jpg" alt="In-house construction crew on site, built to last">
+                </div>
+                <div class="philosophy-card-body">
+                    <div class="philosophy-number">03</div>
+                    <h3 class="philosophy-card-title">Built to Last</h3>
+                    <p class="philosophy-card-desc">Every build uses sustainable construction methods that protect the environment and ensure trails stand the test of time. We don't cut corners on the ground, because our reputation rides on every trail we sign off.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Quotes Section -->
-    <section class="quotes-section">
-        <div class="quotes-header">
-            <span class="section-label reveal">In His Words</span>
-            <h2 class="section-title reveal">Sam Hill Quotes</h2>
-        </div>
-        <div class="quotes-grid">
-            <div class="quote-card reveal">
-                <div class="quote-mark">"</div>
-                <p class="quote-text">Hold it Wide, Let it Slide</p>
-                <span class="quote-attribution">Sam Hill</span>
-            </div>
-            <div class="quote-card reveal">
-                <div class="quote-mark">"</div>
-                <p class="quote-text">Foot Out, Flat Out</p>
-                <span class="quote-attribution">Sam Hill</span>
-            </div>
-            <div class="quote-card reveal">
-                <div class="quote-mark">"</div>
-                <p class="quote-text">The Definition of Success is Knowing You've Given 100%</p>
-                <span class="quote-attribution">Sam Hill</span>
-            </div>
-        </div>
-    </section>
 
     <!-- Partnership Section -->
     <section>
