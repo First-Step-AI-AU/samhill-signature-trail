@@ -23,6 +23,12 @@
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #111111; }
         ::-webkit-scrollbar-thumb { background: #c8ff00; border-radius: 3px; }
+        /* Hide custom scrollbar styling on mobile so it doesn't show as a static lime stripe */
+        @media (max-width: 900px) {
+            html { scrollbar-width: none; }
+            ::-webkit-scrollbar { width: 0; height: 0; display: none; }
+        }
+
         img { max-width: 100%; display: block; }
         a { color: inherit; text-decoration: none; }
         ul { list-style: none; }
