@@ -1096,6 +1096,59 @@
             .footer-grid { grid-template-columns: 1fr; }
             .hero-title { font-size: clamp(2.8rem, 12vw, 4rem); }
         }
+    
+        /* === Mobile UX patch === */
+        /* Smaller logo on mobile */
+        @media (max-width: 768px) {
+            .nav-logo img { height: 55px; }
+        }
+        /* Floating Shop Merch button (mobile only, replaces back-to-top) */
+        .shop-merch-fab { display: none; }
+        @media (max-width: 768px) {
+            .back-to-top { display: none !important; }
+            .shop-merch-fab {
+                display: inline-flex;
+                align-items: center;
+                position: fixed;
+                bottom: 1.25rem;
+                right: 1.25rem;
+                z-index: 999;
+                padding: 0.85rem 1.3rem;
+                background: #c8ff00;
+                color: #0a0a0a !important;
+                font-family: 'Space Mono', monospace;
+                font-size: 0.72rem;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                font-weight: 700;
+                text-decoration: none;
+                clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+                box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+            }
+            .shop-merch-fab:hover { background: #d4ff33; }
+        }
+        /* 'Shop Our Merch' link in mobile overlay */
+        .mobile-nav-link.mobile-nav-cta {
+            color: #c8ff00;
+        }
+        /* Hero eyebrow: white with a subtle dark backdrop for legibility */
+        .hero-label {
+            color: #f5f5f0 !important;
+            display: inline-block;
+            padding: 0.4rem 0.85rem;
+            background: rgba(10, 10, 10, 0.45);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+        .page-hero-label {
+            color: #f5f5f0 !important;
+            display: inline-block;
+            padding: 0.4rem 0.85rem;
+            background: rgba(10, 10, 10, 0.45);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+
     </style>
 </head>
 <body>
@@ -1140,6 +1193,7 @@
         <a href="services.html" class="mobile-nav-link">Services</a>
         <a href="work.html" class="mobile-nav-link">Work</a>
         <a href="contact.html" class="mobile-nav-link">Contact</a>
+        <a href="https://hq39pb-yx.myshopify.com/" target="_blank" rel="noopener" class="mobile-nav-link mobile-nav-cta">Shop Our Merch</a>
     </div>
 
     <!-- Hero -->
@@ -1487,6 +1541,8 @@
     </footer>
 
     <!-- Back to Top -->
+    <a href="https://hq39pb-yx.myshopify.com/" target="_blank" rel="noopener" class="shop-merch-fab" aria-label="Shop our merch">Shop Merch</a>
+
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
         <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
     </button>
