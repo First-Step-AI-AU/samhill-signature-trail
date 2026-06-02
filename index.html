@@ -76,11 +76,12 @@
         }
         .loader-text {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(2rem, 6vw, 4.5rem);
-            letter-spacing: 0.3em;
+            font-size: clamp(1.1rem, 3vw, 2.2rem);
+            letter-spacing: 0.2em;
             display: flex;
             gap: 2px;
             margin-bottom: 2rem;
+            white-space: nowrap;
         }
         .loader-text span {
             display: inline-block;
@@ -1442,13 +1443,13 @@
     <script>
         // ===== LOADER =====
         (function() {
-            const text = 'SAM HILL ST';
+            const text = 'SAM HILL SIGNATURE TRAIL';
             const container = document.getElementById('loaderText');
             text.split('').forEach((char, i) => {
                 const span = document.createElement('span');
                 span.textContent = char === ' ' ? '\u00A0' : char;
                 span.style.animationDelay = `${i * 0.08}s`;
-                if (i >= 9) span.style.color = '#c8ff00'; // ST in accent
+                if (i >= 9) span.style.color = '#c8ff00'; // 'SIGNATURE TRAIL' in accent
                 container.appendChild(span);
             });
             setTimeout(() => {
