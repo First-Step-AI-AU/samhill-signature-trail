@@ -398,11 +398,19 @@
         .featured-project-hero:hover .featured-project-hero-video { transform: scale(1.03); }
         .featured-project-body {
             display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 1.6fr 1fr;
             gap: 3rem;
             margin-bottom: 3rem;
+            align-items: start;
         }
         .project-meta-grid { display: flex; flex-direction: column; gap: 0.25rem; }
+        .project-meta-grid--two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 2rem;
+            row-gap: 0;
+            margin-bottom: 1.5rem;
+        }
         .project-meta-item {
             display: flex;
             flex-direction: column;
@@ -411,6 +419,7 @@
             border-bottom: 1px solid #1f1f1f;
         }
         .project-meta-item:last-child { border-bottom: none; }
+        .project-meta-grid--two-col .project-meta-item:nth-last-child(-n+2) { border-bottom: none; }
         .project-meta-label {
             font-family: 'Space Mono', monospace;
             font-size: 0.65rem;
@@ -424,12 +433,27 @@
             letter-spacing: 0.05em;
             color: #f5f5f0;
         }
-        .featured-project-copy { padding-top: 1.25rem; }
+        .featured-project-copy { padding-top: 0.5rem; }
         .featured-project-copy p {
             font-size: 1rem;
             color: #999;
             line-height: 1.8;
             margin-bottom: 1.25rem;
+        }
+        .featured-project-video {
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px));
+            background: #111;
+        }
+        .featured-project-video video {
+            width: 100%;
+            height: 100%;
+            min-height: 480px;
+            max-height: 700px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
         }
         .featured-project-copy p:last-child { margin-bottom: 0; }
         .featured-project-copy p strong { color: #f5f5f0; font-weight: 600; }
@@ -465,8 +489,10 @@
             background: linear-gradient(to right, transparent, #1f1f1f 20%, #1f1f1f 80%, transparent);
         }
         @media (max-width: 900px) {
-            .featured-project-body { grid-template-columns: 1fr; gap: 1.5rem; }
+            .featured-project-body { grid-template-columns: 1fr; gap: 2rem; }
             .featured-project-copy { padding-top: 0; }
+            .project-meta-grid--two-col { column-gap: 1.5rem; }
+            .featured-project-video video { min-height: auto; max-height: 75vh; }
             .featured-project-gallery { grid-template-columns: 1fr; }
             .featured-project-hero img,
             .featured-project-hero-video { height: 55vh; min-height: 300px; }
@@ -899,29 +925,34 @@
             </div>
 
             <div class="featured-project-body">
-                <div class="featured-project-info reveal-left">
-                    <div class="project-meta-grid">
+                <div class="featured-project-text reveal-left">
+                    <div class="project-meta-grid project-meta-grid--two-col">
                         <div class="project-meta-item">
                             <span class="project-meta-label">Location</span>
                             <span class="project-meta-value">Queenstown, NZ</span>
-                        </div>
-                        <div class="project-meta-item">
-                            <span class="project-meta-label">Scope</span>
-                            <span class="project-meta-value">Design + Build</span>
                         </div>
                         <div class="project-meta-item">
                             <span class="project-meta-label">Terrain</span>
                             <span class="project-meta-value">Alpine, exposed schist</span>
                         </div>
                         <div class="project-meta-item">
+                            <span class="project-meta-label">Scope</span>
+                            <span class="project-meta-value">Design + Build</span>
+                        </div>
+                        <div class="project-meta-item">
                             <span class="project-meta-label">Delivery</span>
-                            <span class="project-meta-value">In-house crew</span>
+                            <span class="project-meta-value">Managed end-to-end</span>
                         </div>
                     </div>
+                    <div class="featured-project-copy">
+                        <p>Built across the steep, exposed terrain above Lake Wakatipu, this project demanded a build that could honour the alpine landscape and still deliver the flow our team puts our name to. The result is a network of machine shaped and compacted berms, progressive jumps, and natural-feature lines cut directly into the contours of the mountainside.</p>
+                        <p>Our crew managed the full build on site, from first earthworks through to final ride-off. Every line was shaped by the team that designed it, and every feature was tested by the people who built it.</p>
+                    </div>
                 </div>
-                <div class="featured-project-copy reveal-right">
-                    <p>Built across the steep, exposed terrain above Lake Wakatipu, this project demanded a build that could honour the alpine landscape and still deliver the flow our team puts our name to. The result is a network of machine shaped and compacted berms, progressive jumps, and natural-feature lines cut directly into the contours of the mountainside.</p>
-                    <p>Our crew managed the full build on site, from first earthworks through to final ride-off. Every line was shaped by the team that designed it, and every feature was tested by the people who built it.</p>
+                <div class="featured-project-video reveal-right">
+                    <video autoplay loop muted playsinline preload="metadata" poster="assets/video/queenstown-hero-poster.jpg">
+                        <source src="assets/video/queenstown-hero.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
 
