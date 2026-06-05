@@ -383,7 +383,8 @@
             margin: 2.5rem 0 3rem;
             clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px));
         }
-        .featured-project-hero img {
+        .featured-project-hero img,
+        .featured-project-hero-video {
             width: 100%;
             height: 65vh;
             min-height: 380px;
@@ -393,7 +394,8 @@
             display: block;
             transition: transform 1.2s ease;
         }
-        .featured-project-hero:hover img { transform: scale(1.03); }
+        .featured-project-hero:hover img,
+        .featured-project-hero:hover .featured-project-hero-video { transform: scale(1.03); }
         .featured-project-body {
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -466,7 +468,8 @@
             .featured-project-body { grid-template-columns: 1fr; gap: 1.5rem; }
             .featured-project-copy { padding-top: 0; }
             .featured-project-gallery { grid-template-columns: 1fr; }
-            .featured-project-hero img { height: 55vh; min-height: 300px; }
+            .featured-project-hero img,
+            .featured-project-hero-video { height: 55vh; min-height: 300px; }
             .featured-gallery-image img { height: 240px; }
         }
 
@@ -892,7 +895,9 @@
             </div>
 
             <div class="featured-project-hero reveal">
-                <img src="assets/projects/queenstown/hero.jpg" alt="Riders at golden hour on a new alpine trail above Queenstown's lake and mountain range">
+                <video class="featured-project-hero-video" autoplay loop muted playsinline preload="metadata" poster="assets/video/queenstown-hero-poster.jpg">
+                    <source src="assets/video/queenstown-hero.mp4" type="video/mp4">
+                </video>
             </div>
 
             <div class="featured-project-body">
