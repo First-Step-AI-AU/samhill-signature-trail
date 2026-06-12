@@ -3,3 +3,7 @@
 TENDER EXAMPLES/
 templates/
 scraped-content.json
+
+# Raw source media — never deploy
+website/
+google phoots/

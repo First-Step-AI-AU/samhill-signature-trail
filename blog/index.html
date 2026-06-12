@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Sam Hill Signature Trail</title>
-    <meta name="description" content="Meet Sam Hill, 8x World Champion and founder of a full-service trail design and construction company. Learn about our approach, our capability, and what drives us to deliver trails that last.">
+    <title>Blog | Sam Hill Signature Trail</title>
+    <meta name="description" content="Stories from the trail. Insights, updates, and behind-the-scenes from Sam Hill Signature Trail.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -70,7 +70,7 @@
             inset: 0;
             background:
                 linear-gradient(rgba(10, 10, 10, 0.72), rgba(10, 10, 10, 0.85)),
-                url('assets/team/family.jpg') center center / cover no-repeat;
+                url('/assets/team/family.jpg') center center / cover no-repeat;
             z-index: 9999;
             display: flex;
             flex-direction: column;
@@ -185,7 +185,7 @@
         }
         .nav-links a:hover { color: #f5f5f0; }
         .nav-links a:hover::after { width: 100%; }
-        .nav-links a.active { color: #c8ff00; }
+        .nav-links a.active { color: #f5f5f0; }
         .nav-links a.active::after { width: 100%; }
         .nav-cta {
             font-family: 'Space Mono', monospace;
@@ -244,66 +244,6 @@
         }
         .mobile-nav a:hover { color: #c8ff00; }
 
-        /* ===== PAGE HERO ===== */
-        .page-hero {
-            position: relative;
-            height: 50vh;
-            min-height: 400px;
-            display: flex;
-            align-items: flex-end;
-            padding: 4rem 3rem;
-            overflow: hidden;
-        }
-        .page-hero-bg {
-            position: absolute;
-            inset: 0;
-            background: url('assets/projects/black-pine/trail-cut-overhead.jpg') center center / cover no-repeat;
-        }
-        .page-hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, #0a0a0a 0%, rgba(10,10,10,0.6) 40%, rgba(10,10,10,0.4) 100%);
-        }
-        .page-hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-        }
-        .page-hero-label {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.7rem;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            color: #c8ff00;
-            margin-bottom: 1rem;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        .page-hero-label.revealed { opacity: 1; transform: translateY(0); transition: all 0.6s ease 0.3s; }
-        .page-hero-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(3rem, 8vw, 6rem);
-            line-height: 0.95;
-            letter-spacing: 0.02em;
-            margin-bottom: 1rem;
-            overflow: hidden;
-        }
-        .page-hero-title span {
-            display: inline-block;
-            transform: translateY(110%);
-            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .page-hero-title span.revealed { transform: translateY(0); }
-        .page-hero-subtitle {
-            font-size: 1.1rem;
-            color: #999;
-            max-width: 600px;
-            line-height: 1.7;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        .page-hero-subtitle.revealed { opacity: 1; transform: translateY(0); transition: all 0.6s ease 0.8s; }
-
         /* ===== SECTION COMMON ===== */
         section { padding: 8rem 3rem; position: relative; }
         .section-label {
@@ -332,268 +272,163 @@
             opacity: 1;
             transform: translateY(0);
         }
-        .reveal-left {
-            opacity: 0;
-            transform: translateX(-40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        .reveal-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        .reveal-right {
-            opacity: 0;
-            transform: translateX(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        .reveal-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
 
-        /* ===== ABOUT (2-column) ===== */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            align-items: center;
-        }
-        .about-image {
+        /* ===== BLOG HERO ===== */
+        .blog-hero {
             position: relative;
+            height: 40vh;
+            min-height: 320px;
+            display: flex;
+            align-items: flex-end;
+            padding: 4rem 3rem;
             overflow: hidden;
-            clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px));
+            background: linear-gradient(135deg, #0a0a0a 0%, #111111 40%, #0f0f0f 100%);
         }
-        .about-image img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-        .about-image:hover img { transform: scale(1.05); }
-        .about-image-border {
+        .blog-hero::before {
+            content: '';
             position: absolute;
-            bottom: -15px; right: -15px;
-            width: 100%; height: 100%;
-            border: 1px solid #c8ff00;
-            clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px));
-            z-index: -1;
+            inset: 0;
+            background: radial-gradient(ellipse at 70% 20%, rgba(200, 255, 0, 0.03) 0%, transparent 60%);
         }
-        .about-text p {
-            color: #999;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
+        .blog-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(200, 255, 0, 0.2), transparent);
         }
-        .about-text p strong { color: #f5f5f0; font-weight: 600; }
-
-        /* ===== STATS ROW ===== */
-        .stats-section {
-            background: #111111;
-        }
-        .stats-row {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
+        .blog-hero-content {
+            position: relative;
+            z-index: 2;
             max-width: 900px;
             margin: 0 auto;
-            text-align: center;
+            width: 100%;
         }
-        .stat-item {
-            padding: 2rem 1rem;
-        }
-        .stat-number {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(3rem, 6vw, 5rem);
-            color: #c8ff00;
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-        .stat-number .stat-suffix {
-            font-size: 0.6em;
-        }
-        .stat-label {
+        .blog-hero-label {
             font-family: 'Space Mono', monospace;
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
             text-transform: uppercase;
+            color: #c8ff00;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .blog-hero-label.revealed { opacity: 1; transform: translateY(0); transition: all 0.6s ease 0.3s; }
+        .blog-hero-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            line-height: 0.95;
+            letter-spacing: 0.02em;
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .blog-hero-title.revealed { opacity: 1; transform: translateY(0); transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.5s; }
+        .blog-hero-subtitle {
+            font-size: 1.05rem;
             color: #6b6b6b;
+            max-width: 500px;
+            line-height: 1.7;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .blog-hero-subtitle.revealed { opacity: 1; transform: translateY(0); transition: all 0.6s ease 0.8s; }
+
+        /* ===== BLOG GRID ===== */
+        .blog-section {
+            padding: 6rem 3rem 8rem;
+        }
+        .blog-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
         }
 
-        /* ===== PHILOSOPHY SECTION ===== */
-        .philosophy-section {
+        /* ===== BLOG CARD ===== */
+        .blog-card {
             background: #111111;
-        }
-        .philosophy-header {
-            max-width: 1200px;
-            margin: 0 auto 3rem;
-        }
-        .philosophy-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .philosophy-card {
-            background: #0a0a0a;
-            border: 1px solid #1a1a1a;
-            clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
-            transition: border-color 0.4s ease;
+            clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
             overflow: hidden;
         }
-        .philosophy-card:hover {
-            border-color: #c8ff00;
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
         }
-        .philosophy-card-image {
-            width: 100%;
-            height: 200px;
+        .blog-card-image {
+            position: relative;
             overflow: hidden;
-            background: #1a1a1a;
+            aspect-ratio: 16 / 10;
         }
-        .philosophy-card-image img {
+        .blog-card-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.6s ease;
-            display: block;
         }
-        .philosophy-card:hover .philosophy-card-image img { transform: scale(1.05); }
-        .philosophy-card-body {
-            padding: 2rem 2.5rem 2.5rem;
+        .blog-card:hover .blog-card-image img {
+            transform: scale(1.08);
         }
-        .philosophy-number {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(4rem, 8vw, 6rem);
-            color: #222;
-            line-height: 0.85;
-            margin-bottom: 0.5rem;
-            transition: color 0.4s ease;
-        }
-        .philosophy-card:hover .philosophy-number {
-            color: #c8ff00;
-        }
-        .philosophy-card-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.5rem;
-            letter-spacing: 0.03em;
-            margin-bottom: 1rem;
-            line-height: 1.1;
-        }
-        .philosophy-card-desc {
-            color: #999;
-            line-height: 1.8;
-            font-size: 0.95rem;
-        }
-
-        /* ===== QUOTES SECTION ===== */
-        .quotes-section {
+        .blog-card-placeholder {
+            aspect-ratio: 16 / 10;
+            background: linear-gradient(135deg, #111111 0%, #1a1a1a 60%, #111111 100%);
+            position: relative;
             overflow: hidden;
         }
-        .quotes-header {
-            max-width: 1200px;
-            margin: 0 auto 3rem;
+        .blog-card-placeholder::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #c8ff00, transparent);
+            opacity: 0.6;
         }
-        .quotes-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+        .blog-card-content {
+            padding: 2rem;
         }
-        .quote-card {
-            background: #111111;
-            padding: 3rem 2.5rem;
-            border: 1px solid #1a1a1a;
-            position: relative;
-            clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
-            transition: border-color 0.4s ease;
-        }
-        .quote-card:hover {
-            border-color: #c8ff00;
-        }
-        .quote-mark {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 6rem;
-            color: #c8ff00;
-            line-height: 0.6;
-            margin-bottom: 1rem;
-            opacity: 0.3;
-        }
-        .quote-text {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(1.5rem, 2.5vw, 2rem);
-            line-height: 1.2;
-            letter-spacing: 0.02em;
-            margin-bottom: 1.5rem;
-        }
-        .quote-attribution {
+        .blog-card-date {
             font-family: 'Space Mono', monospace;
             font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: #c8ff00;
-        }
-
-        /* ===== PARTNERSHIP SECTION ===== */
-        .partnership-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            align-items: center;
-        }
-        .partnership-text p {
-            color: #999;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-        }
-        .partnership-text p strong { color: #f5f5f0; font-weight: 600; }
-        .partnership-image {
-            position: relative;
-            overflow: hidden;
-            clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px));
-        }
-        .partnership-image img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-        .partnership-image:hover img { transform: scale(1.05); }
-
-        /* ===== CTA SECTION ===== */
-        .cta-section {
-            background: #111111;
-            text-align: center;
-        }
-        .cta-section .section-title {
-            margin-bottom: 1rem;
-        }
-        .cta-subtitle {
-            color: #999;
-            font-size: 1.1rem;
-            line-height: 1.7;
-            max-width: 550px;
-            margin: 0 auto 2.5rem;
-        }
-        .cta-btn {
-            display: inline-block;
-            font-family: 'Space Mono', monospace;
-            font-size: 0.8rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            padding: 1rem 2.5rem;
-            background: #c8ff00;
-            color: #0a0a0a;
-            font-weight: 700;
-            clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
-            transition: background 0.3s ease;
+            color: #c8ff00;
+            margin-bottom: 0.75rem;
         }
-        .cta-btn:hover { background: #d4ff33; }
+        .blog-card-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            letter-spacing: 0.02em;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            color: #f5f5f0;
+            transition: color 0.3s ease;
+        }
+        .blog-card:hover .blog-card-title {
+            color: #c8ff00;
+        }
+        .blog-card-excerpt {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            color: #6b6b6b;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        .blog-card-link {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #c8ff00;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .blog-card-link:hover {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
 
         /* ===== FOOTER ===== */
         .footer {
@@ -694,33 +529,21 @@
         .back-to-top svg { width: 20px; height: 20px; fill: #0a0a0a; }
 
         /* ===== RESPONSIVE ===== */
-        @media (max-width: 1024px) {
-            .philosophy-grid { gap: 1.5rem; }
-            .quotes-grid { gap: 1.5rem; }
-        }
         @media (max-width: 768px) {
             section { padding: 5rem 1.5rem; }
             .nav { padding: 1rem 1.5rem; }
             .nav-links { display: none; }
             .hamburger { display: flex; }
-            .page-hero { padding: 3rem 1.5rem; min-height: 350px; }
-            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .about-image img { height: 350px; }
-            .about-image-border { display: none; }
-            .stats-row { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-            .stat-number { font-size: clamp(2.5rem, 8vw, 3.5rem); }
-            .philosophy-grid { grid-template-columns: 1fr; }
-            .quotes-grid { grid-template-columns: 1fr; }
-            .partnership-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .partnership-image img { height: 350px; }
+            .blog-hero { padding: 3rem 1.5rem; height: 35vh; min-height: 280px; }
+            .blog-section { padding: 4rem 1.5rem 6rem; }
+            .blog-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
             body { cursor: auto; }
             .cursor-dot, .cursor-ring { display: none; }
         }
         @media (max-width: 480px) {
             .footer-grid { grid-template-columns: 1fr; }
-            .page-hero-title { font-size: clamp(2.5rem, 10vw, 3.5rem); }
-            .stats-row { grid-template-columns: 1fr; gap: 0; }
+            .blog-hero-title { font-size: clamp(2.5rem, 10vw, 3.5rem); }
         }
     
         /* === Mobile UX patch === */
@@ -850,15 +673,15 @@
 
     <!-- Navigation -->
     <nav class="nav" id="nav">
-        <a href="index.html" class="nav-logo">
-            <img src="assets/logo.svg" alt="SHST Logo">
+        <a href="/" class="nav-logo">
+            <img loading="lazy" decoding="async" src="/assets/logo.svg" alt="SHST Logo">
         </a>
         <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html" class="active">About</a>
-            <a href="services.html">Services</a>
-            <a href="work.html">Work</a>
-            <a href="contact.html" class="nav-cta">Get in Touch</a>
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+            <a href="/services/">Services</a>
+            <a href="/work/">Work</a>
+            <a href="/contact/" class="nav-cta">Get in Touch</a>
         </div>
         <button class="hamburger" id="hamburger" aria-label="Toggle menu">
             <span></span><span></span><span></span>
@@ -867,150 +690,65 @@
 
     <!-- Mobile Nav -->
     <div class="mobile-nav" id="mobileNav">
-        <a href="index.html" class="mobile-nav-link">Home</a>
-        <a href="about.html" class="mobile-nav-link">About</a>
-        <a href="services.html" class="mobile-nav-link">Services</a>
-        <a href="work.html" class="mobile-nav-link">Work</a>
-        <a href="contact.html" class="mobile-nav-link">Contact</a>
-        <a href="contact.html" class="mobile-nav-link mobile-nav-cta">Get in Touch</a>
+        <a href="/" class="mobile-nav-link">Home</a>
+        <a href="/about/" class="mobile-nav-link">About</a>
+        <a href="/services/" class="mobile-nav-link">Services</a>
+        <a href="/work/" class="mobile-nav-link">Work</a>
+        <a href="/contact/" class="mobile-nav-link">Contact</a>
+        <a href="/contact/" class="mobile-nav-link mobile-nav-cta">Get in Touch</a>
     </div>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="page-hero-bg"></div>
-        <div class="page-hero-overlay"></div>
-        <div class="page-hero-content">
-            <div class="page-hero-label" id="heroLabel">About Us</div>
-            <h1 class="page-hero-title"><span id="heroTitle">A Legacy Built On The Trail</span></h1>
-            <p class="page-hero-subtitle" id="heroSubtitle">From 8 World Championship titles to shaping the world's most thrilling mountain bike trails.</p>
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="blog-hero-content">
+            <div class="blog-hero-label" id="heroLabel">The Journal</div>
+            <h1 class="blog-hero-title" id="heroTitle">Stories From The Trail</h1>
+            <p class="blog-hero-subtitle" id="heroSubtitle">Insights, updates, and behind-the-scenes from Sam Hill Signature Trail.</p>
         </div>
     </section>
 
-    <!-- About Sam Section -->
-    <section>
-        <div class="about-grid">
-            <div class="about-image reveal-left">
-                <img src="assets/team/sam-podium.jpg" alt="Sam Hill on the podium at EWS Finale, arms raised in celebration">
-                <div class="about-image-border"></div>
-            </div>
-            <div class="about-text reveal-right">
-                <span class="section-label">The Rider</span>
-                <h2 class="section-title">Sam Hill</h2>
-                <p>Sam Hill is one of the most decorated mountain bikers in history, an <strong>8x World Champion</strong> in Enduro and Downhill with over 20 years competing at the highest level across 30+ countries. His career has taken him to the most demanding courses on every continent, giving him an intimate understanding of what makes a trail truly exceptional.</p>
-                <p>Now, Sam is applying that experience across the full lifecycle of trail development, from site assessment and concept design through to construction supervision and final sign-off. Every project carries Sam's name. Every trail is built to a standard he'd be willing to race on.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Dave Section -->
-    <section>
-        <div class="about-grid">
-            <div class="about-text reveal-left">
-                <span class="section-label">The Construction Expertise</span>
-                <h2 class="section-title">Dave du Plessis</h2>
-                <p>Dave leads operations and site supervision for Sam Hill Signature Trail. With <strong>18+ years of hands-on trail delivery</strong> across Australia and New Zealand, he is one of the most experienced trail builders and machine operators in the field.</p>
-                <p>Dave has played a central role in multiple environmentally and culturally sensitive trail projects, working with strict dieback hygiene compliance, buffer zone management around rare flora, and precision excavation in corridors as narrow as 900mm. When the work is on the ground, Dave is on the ground.</p>
-            </div>
-            <div class="about-image reveal-right">
-                <img src="assets/projects/black-pine/operator-mountain.jpg" alt="Dave at the controls of the excavator on site, mountain backdrop">
-                <div class="about-image-border"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Lukas Section -->
-    <section>
-        <div class="about-grid">
-            <div class="about-image reveal-left">
-                <img src="assets/team/lukas-about.jpg" alt="Lukas Baker riding a trail through the pine forest">
-                <div class="about-image-border"></div>
-            </div>
-            <div class="about-text reveal-right">
-                <span class="section-label">The Environmental Expert</span>
-                <h2 class="section-title">Lukas Baker</h2>
-                <p>Lukas brings <strong>16+ years of experience</strong> in environmental and operational management, with a specialised focus on forestry, cultural and ecological compliance, and GIS mapping. He holds a Diploma in Forest and Forest Products and has led diverse projects across Western Australia.</p>
-                <p>His strengths lie in bridging field operations with regulatory and ecological standards, particularly integrating cultural heritage considerations and dieback hygiene requirements into active construction programs. Every site is left better than it was found.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Philosophy Section -->
-    <section class="philosophy-section">
-        <div class="philosophy-header">
-            <span class="section-label reveal">Our Philosophy</span>
-            <h2 class="section-title reveal">Designed by a Champion,<br>Built for Every Rider</h2>
-        </div>
-        <div class="philosophy-grid">
-            <div class="philosophy-card reveal">
-                <div class="philosophy-card-image">
-                    <img src="assets/projects/pemberton/hero.jpg" alt="Carved berm in karri forest, the result of race-proven design instinct">
+    <!-- Blog Grid -->
+    <section class="blog-section">
+        <div class="blog-grid">
+            <!-- Card 1: A New Challenge -->
+            <article class="blog-card reveal">
+                <a href="/blog/a-new-challenge/" class="blog-card-image">
+                    <img src="/assets/team/sam-podium.jpg" alt="A New Challenge" loading="lazy">
+                </a>
+                <div class="blog-card-content">
+                    <div class="blog-card-date">2 September 2024</div>
+                    <h2 class="blog-card-title">A New Challenge</h2>
+                    <p class="blog-card-excerpt">After 20+ years competing at the highest level of mountain biking, Sam Hill is channelling his championship experience into a new venture, trail design and construction.</p>
+                    <a href="/blog/a-new-challenge/" class="blog-card-link">Read More &rarr;</a>
                 </div>
-                <div class="philosophy-card-body">
-                    <div class="philosophy-number">01</div>
-                    <h3 class="philosophy-card-title">Race-Proven Instinct</h3>
-                    <p class="philosophy-card-desc">Every trail we design is informed by thousands of competitive runs on the world's most demanding courses. We don't just draw lines on a map. We feel them.</p>
+            </article>
+
+            <!-- Card 2: Hello World! -->
+            <article class="blog-card reveal">
+                <div class="blog-card-placeholder"></div>
+                <div class="blog-card-content">
+                    <div class="blog-card-date">2 September 2024</div>
+                    <h2 class="blog-card-title">Hello World!</h2>
+                    <p class="blog-card-excerpt">Welcome to Sam Hill Signature Trail. This is the beginning of our journey into world-class trail design and construction.</p>
+                    <a href="#" class="blog-card-link">Read More &rarr;</a>
                 </div>
-            </div>
-            <div class="philosophy-card reveal">
-                <div class="philosophy-card-image">
-                    <img src="assets/projects/margaret-river/hero.jpg" alt="Sunset trail flowing through pine plantation">
-                </div>
-                <div class="philosophy-card-body">
-                    <div class="philosophy-number">02</div>
-                    <h3 class="philosophy-card-title">Flow & Sustainability</h3>
-                    <p class="philosophy-card-desc">The best trails don't fight the terrain. They dance with it. Our designs honour natural contours while creating experiences that keep riders coming back.</p>
-                </div>
-            </div>
-            <div class="philosophy-card reveal">
-                <div class="philosophy-card-image">
-                    <img src="assets/projects/black-pine/forest-mood.jpg" alt="Excavator working deep in pine forest, building to last">
-                </div>
-                <div class="philosophy-card-body">
-                    <div class="philosophy-number">03</div>
-                    <h3 class="philosophy-card-title">Built to Last</h3>
-                    <p class="philosophy-card-desc">Every build uses sustainable construction methods that protect the environment and ensure trails stand the test of time. We don't cut corners on the ground, because our reputation rides on every trail we sign off.</p>
-                </div>
-            </div>
+            </article>
         </div>
-    </section>
-
-
-    <!-- Partnership Section -->
-    <section>
-        <div class="partnership-grid">
-            <div class="partnership-text reveal-left">
-                <span class="section-label">Capability</span>
-                <h2 class="section-title">Construction &amp;<br>Land Management</h2>
-                <p>Sam Hill Signature Trail is built to deliver, not just advise. Our construction capability brings deep expertise in sustainable trail building, environmental land management, and large-scale earthworks across Australia.</p>
-                <p>From small community builds to major park infrastructure, we have the people and the machinery to take a project from drawings to done. Every build is managed internally, with no third parties and no handoffs.</p>
-            </div>
-            <div class="partnership-image reveal-right">
-                <img src="assets/projects/black-pine/dappled-build.jpg" alt="Top-down aerial of an excavator carving trail, dappled light through pines">
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <span class="section-label reveal">Let's Talk</span>
-        <h2 class="section-title reveal">Ready to Work With Us?</h2>
-        <p class="cta-subtitle reveal">Whether you're planning a new trail network or designing a world-class bike park, we'd love to discuss your vision.</p>
-        <a href="contact.html" class="cta-btn reveal">Get in Touch</a>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-inner">
-            <a href="index.html" class="footer-logo">
-                <img src="assets/logo.svg" alt="Sam Hill Signature Trail">
+            <a href="/" class="footer-logo">
+                <img loading="lazy" decoding="async" src="/assets/logo.svg" alt="Sam Hill Signature Trail">
             </a>
             <p class="footer-tagline">World-class mountain bike trail design and construction.<br>Built by a champion, backed by decades of construction experience.</p>
             <nav class="footer-nav">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-                <a href="work.html">Work</a>
-                <a href="contact.html">Contact</a>
+                <a href="/">Home</a>
+                <a href="/about/">About</a>
+                <a href="/services/">Services</a>
+                <a href="/work/">Work</a>
+                <a href="/contact/">Contact</a>
             </nav>
             <div class="footer-social">
                 <a href="https://www.instagram.com/samhill_signaturetrail/" target="_blank" rel="noopener" aria-label="SHST Instagram">
@@ -1027,7 +765,7 @@
     </footer>
 
     <!-- Back to Top -->
-    <a href="contact.html" class="shop-merch-fab" aria-label="Get in touch">Get in Touch</a>
+    <a href="/contact/" class="shop-merch-fab" aria-label="Get in touch">Get in Touch</a>
 
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
         <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
@@ -1082,7 +820,7 @@
         animateRing();
 
         // Hover effect on interactive elements
-        document.querySelectorAll('a, button, .about-image, .philosophy-card, .quote-card, .partnership-image').forEach(el => {
+        document.querySelectorAll('a, button, .blog-card').forEach(el => {
             el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
             el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
         });
@@ -1119,35 +857,7 @@
             });
         }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
-        document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
-
-        // ===== STAT COUNTER ANIMATION =====
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const counter = entry.target;
-                    const target = parseInt(counter.getAttribute('data-target'));
-                    const duration = 2000;
-                    const startTime = performance.now();
-
-                    function updateCounter(currentTime) {
-                        const elapsed = currentTime - startTime;
-                        const progress = Math.min(elapsed / duration, 1);
-                        const eased = 1 - Math.pow(1 - progress, 3);
-                        counter.textContent = Math.floor(eased * target);
-                        if (progress < 1) {
-                            requestAnimationFrame(updateCounter);
-                        } else {
-                            counter.textContent = target;
-                        }
-                    }
-                    requestAnimationFrame(updateCounter);
-                    counterObserver.unobserve(counter);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        document.querySelectorAll('.stat-counter').forEach(el => counterObserver.observe(el));
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
         // ===== BACK TO TOP =====
         const backToTop = document.getElementById('backToTop');

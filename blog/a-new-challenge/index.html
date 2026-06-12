@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Sam Hill Signature Trail</title>
-    <meta name="description" content="Stories from the trail. Insights, updates, and behind-the-scenes from Sam Hill Signature Trail.">
+    <title>A New Challenge | Sam Hill Signature Trail</title>
+    <meta name="description" content="A Champion's Perspective on Trail Design, Sam Hill shares his journey from World Championship racing to world-class trail design.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -70,7 +70,7 @@
             inset: 0;
             background:
                 linear-gradient(rgba(10, 10, 10, 0.72), rgba(10, 10, 10, 0.85)),
-                url('assets/team/family.jpg') center center / cover no-repeat;
+                url('/assets/team/family.jpg') center center / cover no-repeat;
             z-index: 9999;
             display: flex;
             flex-direction: column;
@@ -185,8 +185,6 @@
         }
         .nav-links a:hover { color: #f5f5f0; }
         .nav-links a:hover::after { width: 100%; }
-        .nav-links a.active { color: #f5f5f0; }
-        .nav-links a.active::after { width: 100%; }
         .nav-cta {
             font-family: 'Space Mono', monospace;
             font-size: 0.75rem;
@@ -244,191 +242,166 @@
         }
         .mobile-nav a:hover { color: #c8ff00; }
 
-        /* ===== SECTION COMMON ===== */
-        section { padding: 8rem 3rem; position: relative; }
-        .section-label {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.7rem;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            color: #c8ff00;
-            margin-bottom: 1rem;
-        }
-        .section-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            letter-spacing: 0.02em;
-            line-height: 1.05;
-            margin-bottom: 2rem;
-        }
-
         /* ===== SCROLL REVEAL ===== */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
+        .reveal-left.visible { opacity: 1; transform: translateX(0); }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal-right.visible { opacity: 1; transform: translateX(0); }
 
-        /* ===== BLOG HERO ===== */
-        .blog-hero {
-            position: relative;
-            height: 40vh;
-            min-height: 320px;
-            display: flex;
-            align-items: flex-end;
-            padding: 4rem 3rem;
-            overflow: hidden;
-            background: linear-gradient(135deg, #0a0a0a 0%, #111111 40%, #0f0f0f 100%);
-        }
-        .blog-hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at 70% 20%, rgba(200, 255, 0, 0.03) 0%, transparent 60%);
-        }
-        .blog-hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(200, 255, 0, 0.2), transparent);
-        }
-        .blog-hero-content {
-            position: relative;
-            z-index: 2;
+        /* ===== ARTICLE HEADER ===== */
+        .article-header {
+            padding: 10rem 3rem 3rem;
             max-width: 900px;
             margin: 0 auto;
-            width: 100%;
         }
-        .blog-hero-label {
+        .article-back {
             font-family: 'Space Mono', monospace;
             font-size: 0.75rem;
-            letter-spacing: 0.3em;
+            letter-spacing: 0.1em;
+            color: #c8ff00;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        .article-back:hover { color: #d4ff33; }
+        .article-date {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
             color: #c8ff00;
-            margin-bottom: 1.5rem;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        .blog-hero-label.revealed { opacity: 1; transform: translateY(0); transition: all 0.6s ease 0.3s; }
-        .blog-hero-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(3rem, 8vw, 5.5rem);
-            line-height: 0.95;
-            letter-spacing: 0.02em;
             margin-bottom: 1rem;
-            opacity: 0;
-            transform: translateY(30px);
         }
-        .blog-hero-title.revealed { opacity: 1; transform: translateY(0); transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.5s; }
-        .blog-hero-subtitle {
-            font-size: 1.05rem;
+        .article-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            letter-spacing: 0.02em;
+            line-height: 1.05;
+            margin-bottom: 1rem;
+        }
+        .article-author {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
             color: #6b6b6b;
-            max-width: 500px;
-            line-height: 1.7;
-            opacity: 0;
-            transform: translateY(20px);
         }
-        .blog-hero-subtitle.revealed { opacity: 1; transform: translateY(0); transition: all 0.6s ease 0.8s; }
 
-        /* ===== BLOG GRID ===== */
-        .blog-section {
-            padding: 6rem 3rem 8rem;
-        }
-        .blog-grid {
+        /* ===== FEATURED IMAGE ===== */
+        .article-featured-image {
             max-width: 900px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            margin: 0 auto 3rem;
+            padding: 0 3rem;
+        }
+        .article-featured-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px));
         }
 
-        /* ===== BLOG CARD ===== */
-        .blog-card {
-            background: #111111;
-            clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            overflow: hidden;
+        /* ===== ARTICLE BODY ===== */
+        .article-body {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 0 3rem 4rem;
         }
-        .blog-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        .article-body p {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            color: #999;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
         }
-        .blog-card-image {
-            position: relative;
-            overflow: hidden;
-            aspect-ratio: 16 / 10;
+        .article-body p strong {
+            color: #f5f5f0;
+            font-weight: 600;
         }
-        .blog-card-image img {
+        .article-body h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            color: #f5f5f0;
+            letter-spacing: 0.05em;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
+        .article-body .inline-image {
+            margin: 2.5rem 0;
+        }
+        .article-body .inline-image img {
             width: 100%;
-            height: 100%;
+            height: auto;
             object-fit: cover;
-            transition: transform 0.6s ease;
+            clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px));
         }
-        .blog-card:hover .blog-card-image img {
-            transform: scale(1.08);
+        .article-body .inline-image figcaption {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: #6b6b6b;
+            letter-spacing: 0.05em;
+            margin-top: 0.75rem;
+            text-align: center;
         }
-        .blog-card-placeholder {
-            aspect-ratio: 16 / 10;
-            background: linear-gradient(135deg, #111111 0%, #1a1a1a 60%, #111111 100%);
-            position: relative;
-            overflow: hidden;
+
+        /* ===== POST FOOTER ===== */
+        .post-footer {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 0 3rem 5rem;
         }
-        .blog-card-placeholder::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #c8ff00, transparent);
-            opacity: 0.6;
+        .post-footer-divider {
+            width: 100%;
+            height: 1px;
+            background: #222;
+            margin-bottom: 2rem;
         }
-        .blog-card-content {
-            padding: 2rem;
-        }
-        .blog-card-date {
+        .post-footer-share-label {
             font-family: 'Space Mono', monospace;
             font-size: 0.7rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: #c8ff00;
-            margin-bottom: 0.75rem;
-        }
-        .blog-card-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.8rem;
-            letter-spacing: 0.02em;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            color: #f5f5f0;
-            transition: color 0.3s ease;
-        }
-        .blog-card:hover .blog-card-title {
-            color: #c8ff00;
-        }
-        .blog-card-excerpt {
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.9rem;
             color: #6b6b6b;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
-        .blog-card-link {
+        .post-footer-share-icons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+        .post-footer-share-icons a {
+            width: 40px; height: 40px;
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+            clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+        }
+        .post-footer-share-icons a:hover { background: #c8ff00; }
+        .post-footer-share-icons a:hover svg { fill: #0a0a0a; }
+        .post-footer-share-icons a svg { width: 18px; height: 18px; fill: #6b6b6b; transition: fill 0.3s ease; }
+        .post-footer-back {
             font-family: 'Space Mono', monospace;
             font-size: 0.75rem;
             letter-spacing: 0.1em;
-            text-transform: uppercase;
             color: #c8ff00;
-            transition: all 0.3s ease;
-            display: inline-block;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
         }
-        .blog-card-link:hover {
-            text-decoration: underline;
-            text-underline-offset: 4px;
-        }
+        .post-footer-back:hover { color: #d4ff33; }
 
         /* ===== FOOTER ===== */
         .footer {
@@ -530,20 +503,20 @@
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            section { padding: 5rem 1.5rem; }
             .nav { padding: 1rem 1.5rem; }
             .nav-links { display: none; }
             .hamburger { display: flex; }
-            .blog-hero { padding: 3rem 1.5rem; height: 35vh; min-height: 280px; }
-            .blog-section { padding: 4rem 1.5rem 6rem; }
-            .blog-grid { grid-template-columns: 1fr; }
+            .article-header { padding: 8rem 1.5rem 2rem; }
+            .article-featured-image { padding: 0 1.5rem; }
+            .article-body { padding: 0 1.5rem 3rem; }
+            .post-footer { padding: 0 1.5rem 4rem; }
+            .footer { padding: 4rem 1.5rem 2rem; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
             body { cursor: auto; }
             .cursor-dot, .cursor-ring { display: none; }
         }
         @media (max-width: 480px) {
             .footer-grid { grid-template-columns: 1fr; }
-            .blog-hero-title { font-size: clamp(2.5rem, 10vw, 3.5rem); }
         }
     
         /* === Mobile UX patch === */
@@ -673,15 +646,15 @@
 
     <!-- Navigation -->
     <nav class="nav" id="nav">
-        <a href="index.html" class="nav-logo">
-            <img src="assets/logo.svg" alt="SHST Logo">
+        <a href="/" class="nav-logo">
+            <img loading="lazy" decoding="async" src="/assets/logo.svg" alt="SHST Logo">
         </a>
         <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="work.html">Work</a>
-            <a href="contact.html" class="nav-cta">Get in Touch</a>
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+            <a href="/services/">Services</a>
+            <a href="/work/">Work</a>
+            <a href="/contact/" class="nav-cta">Get in Touch</a>
         </div>
         <button class="hamburger" id="hamburger" aria-label="Toggle menu">
             <span></span><span></span><span></span>
@@ -690,65 +663,80 @@
 
     <!-- Mobile Nav -->
     <div class="mobile-nav" id="mobileNav">
-        <a href="index.html" class="mobile-nav-link">Home</a>
-        <a href="about.html" class="mobile-nav-link">About</a>
-        <a href="services.html" class="mobile-nav-link">Services</a>
-        <a href="work.html" class="mobile-nav-link">Work</a>
-        <a href="contact.html" class="mobile-nav-link">Contact</a>
-        <a href="contact.html" class="mobile-nav-link mobile-nav-cta">Get in Touch</a>
+        <a href="/" class="mobile-nav-link">Home</a>
+        <a href="/about/" class="mobile-nav-link">About</a>
+        <a href="/services/" class="mobile-nav-link">Services</a>
+        <a href="/work/" class="mobile-nav-link">Work</a>
+        <a href="/contact/" class="mobile-nav-link">Contact</a>
+        <a href="/contact/" class="mobile-nav-link mobile-nav-cta">Get in Touch</a>
     </div>
 
-    <!-- Blog Hero -->
-    <section class="blog-hero">
-        <div class="blog-hero-content">
-            <div class="blog-hero-label" id="heroLabel">The Journal</div>
-            <h1 class="blog-hero-title" id="heroTitle">Stories From The Trail</h1>
-            <p class="blog-hero-subtitle" id="heroSubtitle">Insights, updates, and behind-the-scenes from Sam Hill Signature Trail.</p>
-        </div>
-    </section>
+    <!-- Article Header -->
+    <header class="article-header reveal">
+        <a href="/blog/" class="article-back">&larr; Back to Blog</a>
+        <div class="article-date">2 September 2024</div>
+        <h1 class="article-title">A New Challenge</h1>
+        <div class="article-author">By Sam Hill</div>
+    </header>
 
-    <!-- Blog Grid -->
-    <section class="blog-section">
-        <div class="blog-grid">
-            <!-- Card 1: A New Challenge -->
-            <article class="blog-card reveal">
-                <a href="blog-a-new-challenge.html" class="blog-card-image">
-                    <img src="assets/team/sam-podium.jpg" alt="A New Challenge" loading="lazy">
-                </a>
-                <div class="blog-card-content">
-                    <div class="blog-card-date">2 September 2024</div>
-                    <h2 class="blog-card-title">A New Challenge</h2>
-                    <p class="blog-card-excerpt">After 20+ years competing at the highest level of mountain biking, Sam Hill is channelling his championship experience into a new venture, trail design and construction.</p>
-                    <a href="blog-a-new-challenge.html" class="blog-card-link">Read More &rarr;</a>
-                </div>
-            </article>
+    <!-- Featured Image -->
+    <div class="article-featured-image reveal">
+        <img loading="lazy" decoding="async" src="/assets/team/sam-podium.jpg" alt="Sam Hill racing in Zermatt">
+    </div>
 
-            <!-- Card 2: Hello World! -->
-            <article class="blog-card reveal">
-                <div class="blog-card-placeholder"></div>
-                <div class="blog-card-content">
-                    <div class="blog-card-date">2 September 2024</div>
-                    <h2 class="blog-card-title">Hello World!</h2>
-                    <p class="blog-card-excerpt">Welcome to Sam Hill Signature Trail. This is the beginning of our journey into world-class trail design and construction.</p>
-                    <a href="#" class="blog-card-link">Read More &rarr;</a>
-                </div>
-            </article>
+    <!-- Article Body -->
+    <article class="article-body">
+        <h2 class="reveal">A Champion's Perspective on Trail Design</h2>
+        <p class="reveal">After more than two decades competing at the highest levels of mountain biking, from Downhill World Championships to Enduro World Series victories, I've had the privilege of riding trails across every continent. That experience hasn't just shaped me as a racer; it's given me an intimate understanding of what makes a trail truly exceptional.</p>
+        <p class="reveal">Every trail tells a story. The best ones flow naturally with the terrain, challenge riders at every level, and leave you wanting to ride them again. That's the standard I'm bringing to trail design, not just technical proficiency, but the instinct that comes from thousands of runs on the world's most demanding courses.</p>
+
+        <h2 class="reveal">In-House Construction Capability</h2>
+        <p class="reveal">Sam Hill Signature Trail is built to deliver, not just advise. Our in-house construction capability brings deep expertise in sustainable trail building, environmental land management, and large-scale earthworks. Every build is managed internally, with no third parties and no handoffs, so the design intent makes it all the way to the finished trail.</p>
+
+        <h2 class="reveal">Comprehensive Trail Development Services</h2>
+        <p class="reveal"><strong>Sam Hill Signature Trail</strong> offers a complete suite of trail development services. From initial consultancy and feasibility studies through to detailed design documentation and construction supervision, we guide projects from concept to completion. Whether it's a single signature trail or a complete network, every project receives the same championship-level attention to detail.</p>
+
+        <h2 class="reveal">Understanding the Art of Trail Networks</h2>
+        <p class="reveal">A great trail network is more than a collection of individual trails. It's an ecosystem that caters to every rider, from families experiencing mountain biking for the first time to seasoned racers pushing their limits. Our designs consider progression, flow between trails, environmental impact, and the overall rider journey.</p>
+
+        <figure class="inline-image reveal">
+            <img loading="lazy" decoding="async" src="/assets/projects/black-pine/woodland-build.jpg" alt="Trail construction in progress">
+            <figcaption>Trail construction, blending design with landscape</figcaption>
+        </figure>
+
+        <h2 class="reveal">Built for The Rider, Connected to Nature</h2>
+        <p class="reveal">Every trail we design starts with two questions: How will this feel to ride? And how does it work with the landscape? The best trails don't fight the terrain, they dance with it. Our approach honours the natural contours of the land while creating experiences that keep riders coming back.</p>
+        <p class="reveal">This is a new chapter, but it's built on everything I've learned across 20+ years on the world's biggest stages. I'm excited to bring that experience to communities, bike parks, and trail networks worldwide.</p>
+    </article>
+
+    <!-- Post Footer -->
+    <div class="post-footer">
+        <div class="post-footer-divider"></div>
+        <div class="post-footer-share-label">Share this article</div>
+        <div class="post-footer-share-icons">
+            <a href="https://www.instagram.com/samhill_signaturetrail/" target="_blank" rel="noopener" aria-label="Share on Instagram">
+                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/samhill13/" target="_blank" rel="noopener" aria-label="Sam Hill Personal">
+                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
         </div>
-    </section>
+        <a href="/blog/" class="post-footer-back">&larr; Back to Blog</a>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-inner">
-            <a href="index.html" class="footer-logo">
-                <img src="assets/logo.svg" alt="Sam Hill Signature Trail">
+            <a href="/" class="footer-logo">
+                <img loading="lazy" decoding="async" src="/assets/logo.svg" alt="Sam Hill Signature Trail">
             </a>
             <p class="footer-tagline">World-class mountain bike trail design and construction.<br>Built by a champion, backed by decades of construction experience.</p>
             <nav class="footer-nav">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-                <a href="work.html">Work</a>
-                <a href="contact.html">Contact</a>
+                <a href="/">Home</a>
+                <a href="/about/">About</a>
+                <a href="/services/">Services</a>
+                <a href="/work/">Work</a>
+                <a href="/contact/">Contact</a>
             </nav>
             <div class="footer-social">
                 <a href="https://www.instagram.com/samhill_signaturetrail/" target="_blank" rel="noopener" aria-label="SHST Instagram">
@@ -765,7 +753,7 @@
     </footer>
 
     <!-- Back to Top -->
-    <a href="contact.html" class="shop-merch-fab" aria-label="Get in touch">Get in Touch</a>
+    <a href="/contact/" class="shop-merch-fab" aria-label="Get in touch">Get in Touch</a>
 
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
         <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
@@ -786,17 +774,9 @@
             setTimeout(() => {
                 document.getElementById('loader').classList.add('hidden');
                 document.body.style.overflow = '';
-                revealHero();
             }, 2400);
             document.body.style.overflow = 'hidden';
         })();
-
-        // ===== HERO REVEAL =====
-        function revealHero() {
-            setTimeout(() => document.getElementById('heroLabel').classList.add('revealed'), 200);
-            setTimeout(() => document.getElementById('heroTitle').classList.add('revealed'), 400);
-            setTimeout(() => document.getElementById('heroSubtitle').classList.add('revealed'), 700);
-        }
 
         // ===== CUSTOM CURSOR =====
         const dot = document.querySelector('.cursor-dot');
@@ -820,7 +800,7 @@
         animateRing();
 
         // Hover effect on interactive elements
-        document.querySelectorAll('a, button, .blog-card').forEach(el => {
+        document.querySelectorAll('a, button, input, textarea, select').forEach(el => {
             el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
             el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
         });
@@ -857,7 +837,7 @@
             });
         }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
 
         // ===== BACK TO TOP =====
         const backToTop = document.getElementById('backToTop');
